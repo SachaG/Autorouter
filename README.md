@@ -14,15 +14,15 @@ meteor add sacha:autorouter
 
 The package works by automatically setting up a number of useful routes for you.
 
-### `/`
+#### `/`
 
 This route will look for a template named `home` and display it.
 
-### `/templateName`
+#### `/templateName`
 
 This route will look for a template named `templateName`. For example, the route `/about` will display the template named `about`. It's that simple :)
 
-### `/collectionName`
+#### `/collectionName`
 
 If the route segment happens to be the name of a **collection**, the package will additionally set the data context of the route, using an object of the same name as the collection.
 
@@ -36,7 +36,7 @@ So if you have a collection named `posts` (as in `Posts = new Mongo.Collection("
 
 Which then lets you do `{{#each posts}}...{{/each}}` in your `posts` template.
 
-### `/collectionName/id`
+#### `/collectionName/id`
 
 Finally, if you also add an `id` as a second parameter, Autorouter will look for a template named `collectionName`, except without the last letter. So `posts` becomes `post`, `users` becomes `user`, etc.
 
