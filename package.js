@@ -8,9 +8,9 @@ Package.describe({
 Package.onUse(function (api) {
 
   api.use([
-    'autopublish',
-    'iron:router',
-    'dburles:mongo-collection-instances'
+    'autopublish@1.0.2',
+    'iron:router@1.0.7',
+    'dburles:mongo-collection-instances@0.2.6'
   ]);
 
   api.add_files([

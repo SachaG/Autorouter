@@ -1,6 +1,6 @@
 # Autorouter
 
-This is a very simple Meteor package made to speed up prototyping. 
+This is a very simple Meteor package made to speed up prototyping by automatically adding Iron Router routes. 
 
 Note that as soon as you start adding your own routes, you'll probably want to remove it. 
 
