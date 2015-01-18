@@ -1,52 +1,35 @@
 Router.route('/:template?/:id?', function () {
+  var self = this;
+  var path = self.location.get().pathname;
+  var template = self.params.template;
+  var id = self.params.id;
+  var collection;
 
-  var path = this.location.get().pathname;
-  var template = this.params.template;
+  try {
+    collection = Mongo.Collection.get(template);
+  } catch (error) {/* collection doesn't exist */}
+  
+  if (! template)
+    return;
 
-  if (!!template) {
-    var singleTemplate = this.params.template.slice(0, - 1);
-    var id = this.params.id;
-    var collection = Mongo.Collection.get(template);
-    var context = {};
-  }
+  if (path === '/')
+    self.render('home');
 
-  if (path === "/") {
+  // remove the last character if we have an id
+  template = id ? template.slice(0, -1) : template;
 
-    // Case 1: root path
-    this.render('home');
+  self.render(template, {
+    data: function() {
+      if (! collection)
+        return;
 
-  } else if (!!template && !!id) {
-
-    // Case 2: single item ("show") route
-    this.render(singleTemplate, {
-
-      data: function () {
-
-        if (typeof collection !== "undefined") {
-          context = collection.findOne(this.params.id);
-        }
+      if (id)
+        return collection.findOne(this.params.id);
+      else {
+        var context = {};
+        context[template] = collection.find();
         return context;
-
       }
-
-    });
-
-  } else if (!!template) {
-
-    // Case 3: item list ("index") route
-    this.render(template, {
-
-      data: function () {
-
-        if (typeof collection !== "undefined") {
-          context[template] = collection.find();
-        }
-        return context;
-
-      }
-
-    });
-
-  }
-
+    }
+  });
 });
