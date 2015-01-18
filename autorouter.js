@@ -8,12 +8,12 @@ Router.route('/:template?/:id?', function () {
   try {
     collection = Mongo.Collection.get(template);
   } catch (error) {/* collection doesn't exist */}
-  
-  if (! template)
-    return;
 
   if (path === '/')
     self.render('home');
+
+  if (! template)
+    return;
 
   // remove the last character if we have an id
   template = id ? template.slice(0, -1) : template;
