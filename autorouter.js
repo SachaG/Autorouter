@@ -10,10 +10,7 @@ Router.route('/:template?/:id?', function () {
   } catch (error) {/* collection doesn't exist */}
 
   if (path === '/')
-    self.render('home');
-
-  if (! template)
-    return;
+    return self.render('home');
 
   // remove the last character if we have an id
   template = id ? template.slice(0, -1) : template;
