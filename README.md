@@ -6,7 +6,7 @@ Note that as soon as you start adding your own routes, you'll probably want to r
 
 ## Demo
 
-- [Demo](https://github.com/SachaG/Autorouter-Demo)
+- [Demo](http://autorouter.meteor.com/)
 - [Demo code](https://github.com/SachaG/Autorouter-Demo)
 
 ## Usage

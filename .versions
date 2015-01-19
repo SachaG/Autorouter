@@ -38,7 +38,7 @@ reactive-dict@1.0.5
 reactive-var@1.0.4
 retry@1.0.2
 routepolicy@1.0.3
-sacha:autorouter@0.1.1
+sacha:autorouter@0.1.2
 spacebars@1.0.4
 spacebars-compiler@1.0.4
 templating@1.0.10
