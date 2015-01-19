@@ -1,14 +1,17 @@
 Router.route('/:template?/:id?', function () {
+
   var self = this;
   var path = self.location.get().pathname;
   var template = self.params.template;
   var id = self.params.id;
   var collection;
 
+  // look for a collection named after the current route, if one exists
   try {
     collection = Mongo.Collection.get(template);
   } catch (error) {/* collection doesn't exist */}
 
+  // root path defaults to the "home" template
   if (path === '/')
     return self.render('home');
 
@@ -17,15 +20,23 @@ Router.route('/:template?/:id?', function () {
 
   self.render(template, {
     data: function() {
+
+      // if there is no collection, don't return any data context
       if (! collection)
         return;
 
-      if (id)
+      if (id) {
+
+        // if we have an id, return the document as data context
         return collection.findOne(this.params.id);
-      else {
+
+      } else {
+        
+        // if we don't have an id, return collection.find() as context as the "template" property
         var context = {};
         context[template] = collection.find();
         return context;
+
       }
     }
   });

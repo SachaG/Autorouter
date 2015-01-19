@@ -4,6 +4,11 @@ This is a very simple Meteor package made to speed up prototyping by automatical
 
 Note that as soon as you start adding your own routes, you'll probably want to remove it. 
 
+## Demo
+
+- [Demo](https://github.com/SachaG/Autorouter-Demo)
+- [Demo code](https://github.com/SachaG/Autorouter-Demo)
+
 ## Usage
 
 Add it with:
@@ -82,3 +87,7 @@ And an `about` template:
 ```
 
 And Autorouter will do the rest!
+
+## Thanks
+
+Thanks to @dburles for his help improving and refactoring the code!

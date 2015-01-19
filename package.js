@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Automatically generate routes for prototyping',
-  version: '0.1.0',
+  version: '0.1.2',
   name: 'sacha:autorouter',
   git: 'https://github.com/sachag/autorouter.git'
 });
