@@ -6,6 +6,7 @@ Note that as soon as you start adding your own routes, you'll probably want to r
 
 ## Demo
 
+- [MeteorPad](http://meteorpad.com/pad/Krn82CpDD23vzcivg/Autorouter%20Demo)
 - [Demo](http://autorouter.meteor.com/)
 - [Demo code](https://github.com/SachaG/Autorouter-Demo)
 
