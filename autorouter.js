@@ -4,12 +4,9 @@ Router.route('/:template?/:id?', function () {
   var path = self.location.get().pathname;
   var template = self.params.template;
   var id = self.params.id;
-  var collection;
 
   // look for a collection named after the current route, if one exists
-  try {
-    collection = Mongo.Collection.get(template);
-  } catch (error) {/* collection doesn't exist */}
+  var collection = Mongo.Collection.get(template);
 
   // root path defaults to the "home" template
   if (path === '/')
